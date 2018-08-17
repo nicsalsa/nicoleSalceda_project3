@@ -9,7 +9,11 @@
 const quizApp = {};
 let total = 0;
 
-quizApp.Results = {
+$(function(){
+      quizApp.submitChoices();
+});
+
+quizApp.results = {
    answer1: { 
       professional: [{
             message: "Professional? Best practice is not to bang in the workplace.",
@@ -20,63 +24,63 @@ quizApp.Results = {
             tally: 20,
       }],
       audience: [{
-            message: "Hmm, think about this a little more.",
+            message: "audience? Hmm, think about this a little more.",
             tally: 10,
       }],
    },
    answer2: {
       email: [{
-            message: "Hmm, think about this a little more.",
+            message: "email? Hmm, think about this a little more.",
             tally: 10,
       }],
       messenger: [{
-            message: "Do it up!!!",
+            message: "messenger? Do it up!!!",
             tally: 20,
       }],
       post: [{
-            message: "hmm, think about this a little more.",
+            message: "post? hmm, think about this a little more.",
             tally: 10,
       }],
       letter: [{
-            message: "Hmm, think about this a little more.",
+            message: "letter? Hmm, think about this a little more.",
             tally: 10,
       }],
    },
    answer3: {
       joyful: [{
-            message: "If you're joyful and you know it use a bang!",
+            message: "joyful? If you're joyful and you know it use a bang!",
             tally: 20,
       }],
       humorous: [{
-            message: "Hmm, Think a little more about it",
+            message: "humorous? Hmm, Think a little more about it",
             tally: 10,
       }],
       informal: [{
-            message: "Why not?!",
+            message: "informal? Why not?!",
             tally: 20,
       }],
       optimistic: [{
-            message: "You can do it!",
+            message: "optimistic? You can do it!",
             tally: 20,
       }],
       serious: [{
-            message: "Unless you are serious about banging, don't do it.",
+            message: "serious? Unless you are serious about banging, don't do it.",
             tally: 0,
       }],
       formal: [{
-            message: "Definitely, don't do it",
+            message: "formal? Definitely, don't do it",
             tally: 0,
       }],
       sad: [{
-            message: "No one likes a cry bang. Don't be weird.",
+            message: "sad? No one likes a cry bang. Don't be weird.",
             tally: 0
       }],
-      pessimistic: [{
-            message: "Unless you change your attitude, don't expect to bang.",
+      pessimist: [{
+            message: "pessimistic? Unless you change your attitude, don't expect to bang.",
             tally: 0
       }],
       horror: [{
-            message: "There's a time and a place to bang, this isn't it.",
+            message: "horror? There's a time and a place to bang, this isn't it.",
             tally: 0
       }],
    },
@@ -86,28 +90,34 @@ quizApp.Results = {
                tally: 20,
             }],
          shock: [{
-               message: "I'm so surprised and have mixed feelings!",
+               message: "shock? I'm so surprised and have mixed feelings!",
                tally: 20,
             }], 
          excitement: [{
-               message: "I'm eager!",
+               message: "excitement? I'm eager!",
                tally: 20,
             }],
          urgency: [{
-               message: "I need swift action to be taken!",
+               message: "urgency? I need swift action to be taken!",
                tally: 20,
             }],
          vehemence: [{
-               message: "I am intensely passionate about this!",
+               message: "vehemence? I am intensely passionate about this!",
                tally: 20,
             }],
-         nodeclare: [{
-               message: "I'm pretty chill right now",
+         nodeclaration: [{
+               message: "nothing to declare? I'm pretty chill right now",
                tally: 0,
             }],
    }
-}
+//    resultsDisplay: {
+//          use: [{
 
+//          }],
+//          useWithCaution: [{}],
+//          dontUse: [{}],
+//    }
+}
 
 quizApp.submitChoices = function(){
       $('form').on('submit', function(e) {
@@ -116,20 +126,54 @@ quizApp.submitChoices = function(){
             const modeAnswer = $('input[name = mode]:checked').val();
             const toneAnswer = $('input[name = tone]:checked').val();
             const emphasisAnswer = $('input[name = emphasis]:checked').val();
+            
             const answerArray = [];
             answerArray.push(relationAnswer, modeAnswer, toneAnswer, emphasisAnswer);
-            // console.log(answerArray);
-
             answerArray.forEach((item) => {
                   total += parseInt(item);
                   // console.log(item);
                   console.log(total);
             })
-            
+
+            // when input is selected 
+            const selectedId1 = $('.relationship input:checked').attr('id');
+            const results1 = quizApp.results.answer1[selectedId1][0].message;
+            console.log(results1);
+
+            const selectedId2 = $('.mode input:checked').attr('id');
+            const results2 = quizApp.results.answer2[selectedId2][0].message;
+            console.log(results2);
+
+            const selectedId3 = $('.tone input:checked').attr('id');
+            const results3 = quizApp.results.answer3[selectedId3][0].message;
+            console.log(results3);
+
+            const selectedId4 = $('.emphasis input:checked').attr('id');
+            const results4 = quizApp.results.answer4[selectedId4][0].message;
+            console.log(results4);
+
+            if(total < 50){
+                  let dontUseDisplay = $('<li class="display1">').append(
+                        '<h2>No bang necessary!</h2>'
+                  );
+                  $('.answers').append(dontUseDisplay);
+            } else if(total >= 50 && total <= 60){
+                  let cautionDisplay = $('<li class="display2">').append(
+                        '<h2>Use with caution</h2>'
+                  );
+                  $('.answers').append(cautionDisplay);
+            } else {
+                  let useDisplay = $('<li class="display3">').append(
+                        '<h2>Bang at will!!!</h2>'
+                  );
+                  $('.answers').append(useDisplay);
+            };            
       });
 }
 
-quizApp.submitChoices();
+
+
+
 
 
 // when the user checks a radio button, 

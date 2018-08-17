@@ -13,70 +13,71 @@
    <main>
       <header>
          <h1>To <span class="bang">Bang</span> or not to <span class="bang">Bang?!</span></h1>
-         <h3>The best way to decide whether or not to use the exclamation point(!)</h3>
+         <!-- <h3>The best way to decide whether or not to use the exclamation point(!)</h3> -->
       </header>
       <form action="">
          <fieldset class="relationship answer1">
             <p>1) What is your relationship to the recipient?</p>
+            <input type="radio" name="relation" id="professional" value="0">
             <label for="professional">Professional</label>
-            <input type="radio" name="relation" id="professional" value="0"> 
-            <label for="personal">Personal</label>
             <input type="radio" name="relation" id="personal" value="20">
-            <label for="mass-audience">Mass Audience</label>
-            <input type="radio" name="relation" id="mass-audience" value="10">
+            <label for="personal">Personal</label>
+            <input type="radio" name="relation" id="audience" value="10">
+            <label for="audience">Mass Audience</label>
          </fieldset>
 
 
          <fieldset class="mode answer2">
             <p>2) What is your mode of communication to the recipient?</p>
-            <label for="email">Email</label>
             <input type="radio" name="mode" id="email" value="10">
-            <label for="messenger">Messenger</label>
+            <label for="email">Email</label>
             <input type="radio" name="mode" id="messenger" value="20">
-            <label for="post">Post</label>
+            <label for="messenger">Messenger</label>
             <input type="radio" name="mode" id="post" value="10">
-            <label for="letter">Letter</label>
+            <label for="post">Post</label>
             <input type="radio" name="mode" id="letter" value="0">
+            <label for="letter">Letter</label>
+           
          </fieldset>
 
 
          <fieldset class="tone answer3">
             <p>3) What tone are you intending to convey?</p>
-            <label for="joyful">Joyful</label>
             <input type="radio" name="tone" id="joyful" value="20">
-            <label for="humorous">Humorous</label>
+            <label for="joyful">Joyful</label>
             <input type="radio" name="tone" id="humorous" value="20">
-            <label for="informal">Informal</label>
+            <label for="humorous">Humorous</label>
             <input type="radio" name="tone" id="informal" value="20">
-            <label for="optimistic">Optimistic</label>
+            <label for="informal">Informal</label>
             <input type="radio" name="tone" id="optimistic" value="20">
-            <label for="serious">Serious</label>
+            <label for="optimistic">Optimistic</label>
             <input type="radio" name="tone" id="serious" value="0">
-            <label for="formal">Formal</label>
+            <label for="serious">Serious</label>
             <input type="radio" name="tone" id="formal" value="0">
-            <label for="sad">Sad</label>
+            <label for="formal">Formal</label>
             <input type="radio" name="tone" id="sad" value="0">
-            <label for="pessimist">Pessimistic</label>
+            <label for="sad">Sad</label>
             <input type="radio" name="tone" id="pessimist" value="0">
-            <label for="horror">Horror</label>
+            <label for="pessimist">Pessimistic</label>
             <input type="radio" name="tone" id="horror" value="0">
+            <label for="horror">Horror</label>
          </fieldset>
 
 
          <fieldset class="emphasis answer4">
             <p>4) Are you declaring this in ...</p>
-            <label for="astonishment">Astonishment</label>
             <input type="radio" name="emphasis" id="joyful" value="20">
-            <label for="shock">Shock</label>
+            <label for="astonishment">Astonishment</label>
             <input type="radio" name="emphasis" id="shock" value="20">
-            <label for="excitement">Excitement</label>
+            <label for="shock">Shock</label>
             <input type="radio" name="emphasis" id="excitement" value="20">
-            <label for="urgency">Urgency</label>
+            <label for="excitement">Excitement</label>
             <input type="radio" name="emphasis" id="urgency" value="20">
-            <label for="vehemence">Vehemence</label>
+            <label for="urgency">Urgency</label>
             <input type="radio" name="emphasis" id="vehemence" value="20">
-            <label for="no-declaration">No, I don't have anything to declare</label>
-            <input type="radio" name="emphasis" id="no-declaration" value="0">
+            <label for="vehemence">Vehemence</label>
+            <input type="radio" name="emphasis" id="nodeclaration" value="0">
+            <label for="nodeclaration">No, I don't have anything to declare</label>
             <div>
                <input class="submitButton"type="submit" value="Tell me how to bang!">
             </div>
