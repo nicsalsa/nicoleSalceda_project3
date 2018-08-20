@@ -1,12 +1,10 @@
-
-// make objects for relationship, mode, tone, and emphasis
 const quizApp = {};
 let total = 0;
-
+// doc ready
 $(function(){
-      quizApp.submitChoices();
+        quizApp.submitChoices();
 });
-
+// objects and arrays
 quizApp.results = {
    answer1: { 
       professional: [{
@@ -109,6 +107,10 @@ quizApp.results = {
 quizApp.submitChoices = function(){
       $('form').on('submit', function(e) {
             e.preventDefault();
+            $('html, body').animate({
+                  scrollTop: $('#final-results').offset().top
+            }, 1000);
+
             const relationAnswer = $('input[name = relation]:checked').val();
             const modeAnswer = $('input[name = mode]:checked').val();
             const toneAnswer = $('input[name = tone]:checked').val();
@@ -121,42 +123,43 @@ quizApp.submitChoices = function(){
             })
 
             // when input is selected 
-            const selectedId1 = $('.relationship input:checked').attr('id');
+            const selectedId1 = $('.relationship input[type = radio]:checked').attr('id');
             const results1 = quizApp.results.answer1[selectedId1][0].message;
             console.log(results1);
             $('.relationship-answer').append(results1);
 
-            const selectedId2 = $('.mode input:checked').attr('id');
+            const selectedId2 = $('.mode input[type = radio]:checked').attr('id');
             const results2 = quizApp.results.answer2[selectedId2][0].message;
             $('.mode-answer').append(results2);
             console.log(results2);
 
-            const selectedId3 = $('.tone input:checked').attr('id');
+            const selectedId3 = $('.tone input[type = radio]:checked').attr('id');
             const results3 = quizApp.results.answer3[selectedId3][0].message;
             $('.tone-answer').append(results3);
             console.log(results3);
 
-            const selectedId4 = $('.emphasis input:checked').attr('id');
+            const selectedId4 = $('.emphasis input[type = radio]:checked').attr('id');
             const results4 = quizApp.results.answer4[selectedId4][0].message;
             $('.emphasis-answer').append(results4);
             console.log(results4);
 
             if(total < 50){
-                  let dontUseDisplay = $('h2').text(
+                  let dontUseDisplay = $('h2.answers').text(
                         'No bang necessary!'
                   );
-                  $('.answers').append(dontUseDisplay);
+                  // $('.answers').append(dontUseDisplay);
             } else if(total >= 50 && total <= 60){
-                  let cautionDisplay = $('h2').text(
+                  let cautionDisplay = $('h2.answers').text(
                         'Use with caution'
                   );
-                  $('.answers').append(cautionDisplay);
+                  // $('.answers').append(cautionDisplay);
             } else {
                   let useDisplay = $('h2.answers').text(
                         'Bang at will!!!'
                   );
                   // $('.answers').append(useDisplay);
             }; 
+            // const btn = $('.submit-button');
       });
 }
 
@@ -165,4 +168,4 @@ quizApp.submitChoices = function(){
 
 
 
-// when the user checks a radio button, 
+

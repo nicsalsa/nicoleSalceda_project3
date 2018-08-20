@@ -189,23 +189,11 @@ header {
       background: #42636f; }
     header .header-hero .hero .header-button {
       position: absolute;
-      width: 200px;
-      height: 60px;
-      bottom: 10%;
+      bottom: 30%;
       left: 50%;
       -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
-      padding: 10px;
-      background-color: black;
-      border: none;
-      border-radius: 20px;
-      font-family: "Bangers", cursive;
-      font-size: 3rem;
-      color: #fae16c;
-      border: 2px solid white; }
-    header .header-hero .hero .header-button:hover {
-      background: tomato; }
+      transform: translateX(-50%); }
 
 .bang {
   font-family: "Bangers", cursive;
@@ -240,6 +228,10 @@ form {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; }
@@ -255,7 +247,17 @@ form {
     align-items: center;
     padding: 10rem 0; }
     form .mode .mode-inputs {
-      width: 40%; }
+      width: 40%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
     form .mode .mode-question {
       width: 60%;
       text-align: right;
@@ -275,7 +277,8 @@ form {
         width: 100%;
         padding-left: 15rem; }
   form .tone {
-    padding: 10rem 0; }
+    padding: 10rem 0;
+    background-color: lightgrey; }
     form .tone .tone-question {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -307,9 +310,46 @@ form {
         align-items: center;
         margin: auto; }
         form .tone .tone-question .tone-flexcontainer .left-tone {
-          width: 50%; }
+          width: 30%; }
+        form .tone .tone-question .tone-flexcontainer .tone-icon {
+          width: 40%;
+          padding: 2rem;
+          text-shadow: 0 0 5px lightgrey; }
         form .tone .tone-question .tone-flexcontainer .right-tone {
-          width: 50%; }
+          width: 25%; }
+    form .tone .tone-inputs {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+  form .emphasis {
+    padding: 10rem 0; }
+    form .emphasis .emphasis-inputs {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+      form .emphasis .emphasis-inputs .emphasis.left {
+        width: 60%; }
+      form .emphasis .emphasis-inputs .emphasis-right {
+        width: 40%; }
+    form .emphasis .submit-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      form .emphasis .submit-container .submit-button {
+        width: 400px; }
 
 .question-option {
   display: -webkit-box;
@@ -329,7 +369,10 @@ form {
   width: 100%; }
   .question-option .fas, .question-option .fab {
     color: #fae16c;
-    text-shadow: 2px 2px 3px darkslategrey; }
+    text-shadow: 1px 1px 8px darkslategrey; }
+
+.emphasis-nodec {
+  width: 550px; }
 
 input[type=radio] {
   visibility: hidden; }
@@ -352,11 +395,15 @@ input:checked + label {
   -webkit-box-shadow: 2px 0 5px darkslategray;
   box-shadow: 2px 0 5px darkslategray; }
 
+.final-results {
+  padding: 10rem 0;
+  background: lightgrey; }
+
 html {
   font-size: 62.5%; }
 
 body {
-  background: palegoldenrod;
+  background: antiquewhite;
   font-family: "Rubik", sans-serif;
   padding: 0;
   margin: 0;
@@ -374,3 +421,24 @@ ul {
 
 fieldset {
   border: none; }
+
+hr {
+  height: 0.5rem;
+  border: none;
+  background: mintcream; }
+
+.button {
+  width: 300px;
+  height: 60px;
+  padding: 10px;
+  background-color: black;
+  border: none;
+  border-radius: 20px;
+  font-family: "Bangers", cursive;
+  font-size: 3rem;
+  color: tomato;
+  border: 2px solid white;
+  letter-spacing: 3px; }
+
+.button:hover {
+  background: #fae16c; }

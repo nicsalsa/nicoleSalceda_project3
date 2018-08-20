@@ -5,15 +5,14 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link href="https://fonts.googleapis.com/css?family=Bangers|Rubik:400,400i,700" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous">
-
    <link rel="stylesheet" href="styles/styles.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"crossorigin="anonymous">
    <title>Project 3 - To Bang or not Bang?!</title>
 </head>
 <body>
+   <!-- BEGINNING OF MAIN SECTION -->
    <main>
+      <!-- HEADER SECTION BEGINS -->
       <header>
          <div class="header-title">
             <h1>To <span class="bang bang1"> Bang </span> or not to  <span class="bang bang2"> Bang ?!</span></h1>
@@ -40,14 +39,17 @@
                   </g>
                   </svg>
                </div>
-               <button class="header-button">
-                  Let's Play!
-               </button>
+               <a href="#relationship">
+                  <button class="header-button button">Let's Play!</button>
+               </a>
             </div>
          </section>
       </header>
+      <!-- HEADER SECTION ENDS -->
+      <!-- BEGINNING OF FORM SECTION -->
       <form action="GET" id="form">
-         <fieldset class="relationship answer1 wrapper">
+         <!-- BEGINNING OF QUESTION 1 - RELATIONSHIP SECTION -->
+         <fieldset class="relationship answer1 wrapper" id="relationship">
             <section class="relationship-question question">
                <h2 class="question-title">Question 1</h2>
                <p class="question">What is your relationship to the recipient?</p>
@@ -69,19 +71,27 @@
             </section>
             <section class="relationship-inputs">
                <img src="assets/svg/relationshipIcon.svg" alt="icon of relationships and connections">
-               <h3 class="relationship-answer output"></h3>
+               <!-- <h3 class="relationship-answer output"></h3> -->
+               <!-- next button -->
+               <a href="#mode-button">
+                  <button class="button" type="button">Next question</button>
+               </a>
             </section>
          </fieldset>
+         <!-- END OF RELATIONSHIP SECTION -->
          <hr class="wrapper">
-
-
+         <!-- BEGINNING OF QUESTION 2 - MODE SECTION -->
          <fieldset class="mode answer2 wrapper">
             <section class="mode-inputs">
                <img src="assets/svg/modeIcon.svg" alt="icon representing communication between devices by Creative Mahira from the Noun Project">
-               <h3 class="mode-answer output"></h3>
+               <!-- <h3 class="mode-answer output"></h3> -->
+               <!-- next button -->
+               <a href="#tone-button">
+                  <button class="button tone-button" type="button">Next question</button>
+               </a>
             </section>
             <section class="mode-question question">
-               <h2 class="question-title mode-title">Question 2</h2>
+               <h2 id="mode-button" class="question-title mode-title">Question 2</h2>
                <p class="question mode-main-question">What is your mode of communication to the recipient?</p>
                <div class="align-right">
                   <div class="question-option">
@@ -106,100 +116,154 @@
                   </div>
                </div>
             </section>
-           
          </fieldset>
+         <!-- END OF QUESTION2 - MODE SECTION -->
          <hr class="wrapper">
-
-         <fieldset class="tone answer3 wrapper">
-            <section class="tone-question">
-               <div>
-                  <h2 class="question-title tone-title">Question 3</h2>
-                  <p class="question tone-main-question">What tone are you trying to convey?</p>
-               </div>
-               <div class="tone-flexcontainer">
-                  <div class="left-tone">
-                     <div class="question-option">
-                        <i class="fas fa-smile-beam"></i>
-                        <input type="radio" name="tone" id="joyful" value="20">
-                        <label for="joyful">Joyful</label>
+         <!-- BEGINNING OF QUESTION 3 - TONE SECTION -->
+         <fieldset class="tone answer3">
+            <div class="wrapper">
+               <section class="tone-question">
+                  <div>
+                     <h2 id="tone-button" class="question-title tone-title">Question 3</h2>
+                     <p class="question tone-main-question">What tone are you trying to convey?</p>
+                  </div>
+                  <div class="tone-flexcontainer">
+                     <div class="left-tone">
+                        <div class="question-option">
+                           <i class="fas fa-smile-beam"></i>
+                           <input type="radio" name="tone" id="joyful" value="20">
+                           <label for="joyful">Joyful</label>
+                        </div>
+                        <div class="question-option">
+                           <i class="fas fa-grin-squint-tears"></i>
+                           <input type="radio" name="tone" id="humorous" value="20">
+                           <label for="humorous">Humorous</label>
+                        </div>
+                        <div class="question-option">
+                           <i class="fas fa-hand-spock"></i>
+                           <input type="radio" name="tone" id="informal" value="20">
+                           <label for="informal">Informal</label>
+                        </div>
+                        <div class="question-option">
+                           <i class="fas fa-thumbs-up"></i>
+                           <input type="radio" name="tone" id="optimistic" value="20">
+                           <label for="optimistic">Optimistic</label>
+                        </div>
                      </div>
-                     <div class="question-option">
-                        <i class="fas fa-grin-squint-tears"></i>
-                        <input type="radio" name="tone" id="humorous" value="20">
-                        <label for="humorous">Humorous</label>
+                     <div class="tone-icon">
+                        <img src="assets/svg/toneIcon.svg" alt="An icon of two people misunderstanding each others texts">
                      </div>
-                     <div class="question-option">
-                        <i class="fas fa-hand-spock"></i>
-                        <input type="radio" name="tone" id="informal" value="20">
-                        <label for="informal">Informal</label>
-                     </div>
-                     <div class="question-option">
-                        <i class="fas fa-thumbs-up"></i>
-                        <input type="radio" name="tone" id="optimistic" value="20">
-                        <label for="optimistic">Optimistic</label>
+                     <div class="right-tone">
+                        <div class="question-option">
+                           <i class="fas fa-meh"></i>
+                           <input type="radio" name="tone" id="serious" value="0">
+                           <label for="serious">Serious</label>
+                        </div>
+                        <div class="question-option">
+                           <i class="fas fa-user-tie"></i>
+                           <input type="radio" name="tone" id="formal" value="0">
+                           <label for="formal">Formal</label>
+                        </div>
+                        <div class="question-option">
+                           <i class="fas fa-sad-tear"></i>
+                           <input type="radio" name="tone" id="sad" value="0">
+                           <label for="sad">Sad</label>
+                        </div>
+                        <div class="question-option">
+                           <i class="fas fa-thumbs-down"></i>
+                           <input type="radio" name="tone" id="pessimist" value="0">
+                           <label for="pessimist">Pessimistic</label>
+                        </div>
+                        <div class="question-option">
+                           <i class="fas fa-frown-open"></i>
+                           <input type="radio" name="tone" id="horror" value="0">
+                           <label for="horror">Horror</label>
+                        </div>
                      </div>
                   </div>
-                  <div class="right-tone">
-                     <div class="question-option">
-                        <i class="fas fa-meh"></i>
-                        <input type="radio" name="tone" id="serious" value="0">
-                        <label for="serious">Serious</label>
-                     </div>
-                     <div class="question-option">
-                        <i class="fas fa-user-tie"></i>
-                        <input type="radio" name="tone" id="formal" value="0">
-                        <label for="formal">Formal</label>
-                     </div>
-                     <div class="question-option">
-                        <i class="fas fa-sad-tear"></i>
-                        <input type="radio" name="tone" id="sad" value="0">
-                        <label for="sad">Sad</label>
-                     </div>
-                     <div class="question-option">
-                        <i class="fas fa-thumbs-down"></i>
-                        <input type="radio" name="tone" id="pessimist" value="0">
-                        <label for="pessimist">Pessimistic</label>
-                     </div>
-                     <div class="question-option">
-                        <i class="fas fa-frown-open"></i>
-                        <input type="radio" name="tone" id="horror" value="0">
-                        <label for="horror">Horror</label>
-                     </div>
-                  </div>
-               </div>
-
-            </section>
-            <section class="tone-inputs">
-               <h3 class="tone-answer output"></h3>
-            </section>
-            
-           
-         </fieldset>
-
-
-         <fieldset class="emphasis answer4">
-            <p>4) Are you declaring this in ...</p>
-            <input type="radio" name="emphasis" id="joyful" value="20">
-            <label for="astonishment">Astonishment</label>
-            <input type="radio" name="emphasis" id="shock" value="20">
-            <label for="shock">Shock</label>
-            <input type="radio" name="emphasis" id="excitement" value="20">
-            <label for="excitement">Excitement</label>
-            <input type="radio" name="emphasis" id="urgency" value="20">
-            <label for="urgency">Urgency</label>
-            <input type="radio" name="emphasis" id="vehemence" value="20">
-            <label for="vehemence">Vehemence</label>
-            <input type="radio" name="emphasis" id="nodeclaration" value="0">
-            <label for="nodeclaration">No, I don't have anything to declare</label>
-            <div>
-               <input class="submitButton"type="submit" value="Tell me how to bang!">
+               </section>
+               <section class="tone-inputs">
+                  <!-- next button -->
+                  <a href="#emphasisButton">
+                     <button class="emphasis-button button" type="button">Next question</button>
+                  </a>
+                  <!-- <h3 class="tone-answer output"></h3> -->
+               </section>
             </div>
-            <h3 class="emphasis-answer output"></h3>
          </fieldset>
+         <!-- END OF QUESTION 3 - TONE SECTION -->
+         <hr class="wrapper">
+         <!--  BEGINNING OF QUESTION 4 - EMPHASIS SECTION-->
+         <fieldset class="emphasis answer4 wrapper">
+            <section class="emphasis-question">
+               <h2 id="emphasisButton" class="question-title">Question 4</h2>
+               <p class="question emphasis-main-question"> Are you declaring this in ...</p>
+            </section>
+            <section class="emphasis-inputs">
+               <div class="emphasis-left">
+                  <div class="question-option">
+                     <i class="fas fa-grin-hearts"></i>
+                     <input type="radio" name="emphasis" id="astonishment" value="20">
+                     <label for="astonishment">Astonishment</label>
+                  </div>
+                  <div class="question-option">
+                     <i class="fas fa-surprise"></i>
+                     <input type="radio" name="emphasis" id="shock" value="20">
+                     <label for="shock">Shock</label>
+                  </div>
+                  <div class="question-option">
+                     <i class="fas fa-exclamation-circle"></i>
+                     <input type="radio" name="emphasis" id="excitement" value="20">
+                     <label for="excitement">Excitement</label>
+                  </div>
+                  <div class="question-option">
+                     <i class="fas fa-clock"></i>
+                     <input type="radio" name="emphasis" id="urgency" value="20">
+                     <label for="urgency">Urgency</label>
+                  </div>
+                  <div class="question-option">
+                     <i class="fas fa-fire"></i>
+                     <input type="radio" name="emphasis" id="vehemence" value="20">
+                     <label for="vehemence">Vehemence</label>
+                  </div>
+                  <div class="question-option">
+                     <i class="fas fa-meh-blank"></i>
+                     <input type="radio" name="emphasis" id="nodeclaration" value="0">
+                     <label class="emphasis-nodec" for="nodeclaration">No, I don't have anything to declare</label>
+                  </div>
+               </div>
+               <div class="emphasis-right">
+                  <img src="assets/svg/emphasisIcon.svg" alt="Icon of protesters from Adrien Coquet from the Noun Project">
+               </div>
+            </section>
+            <!-- submit button -->
+            <div class="submit-container">
+                  <input class="submit-button button" type="submit" value="Tell me how to bang!" required>
+            </div>
+            <!-- <h3 class="emphasis-answer output"></h3> -->
+         </fieldset>
+         <!-- END OF QUESTION 4 - EMPHASIS SECTION -->
       </form>
-      <h2 class="answers"></h2>
+      <!-- END OF FORM SECTION -->
+      <!-- RESULTS SECTION -->
+      <section id="final-results" class="finalResults">
+         <div class="wrapper">
+            <h2 class="answers"></h2>
+            <h3 class="relationship-answer output"></h3>
+            <h3 class="mode-answer output"></h3>
+            <h3 class="tone-answer output"></h3>
+            <h3 class="emphasis-answer output"></h3>
+         </div>
+
+
+      </section>
    </main>
+   <!-- END OF MAIN SECTION -->
+
+   <!-- SCRIPTS -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
    <script src="scripts/script.js"></script>
 </body>
 </html>

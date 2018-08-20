@@ -2,7 +2,7 @@
 
 form {
     background-color: antiquewhite;
-    // RELATIONSHIP QUESTION STYLES
+    // RELATIONSHIP QUESTION STYLES==================
     .relationship {
         display: flex;
         justify-content: center;
@@ -17,10 +17,11 @@ form {
         .relationship-inputs {
             width:50%;
             display: flex;
+            flex-direction: column;
             align-items: center;
         }
     }
-    // MODE QUESTION STYLES
+    // MODE QUESTION STYLES=========================
     .mode {
         display: flex;
         justify-content: space-between;
@@ -28,6 +29,10 @@ form {
         padding: 10rem 0;
         .mode-inputs {
             width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
         }
         .mode-question {
             width: 60%;
@@ -44,9 +49,10 @@ form {
             }
         }
     }
-    // TONE QUESTION STYLINGS
+    // TONE QUESTION STYLINGS=======================
     .tone {
         padding: 10rem 0;
+        background-color: lightgrey;
         .tone-question {
             display: flex;
             flex-direction: column;
@@ -63,11 +69,42 @@ form {
                 align-items: center;
                 margin: auto;
                 .left-tone {
-                    width: 50%;
+                    width: 30%;
+                }
+                .tone-icon {
+                    width:40%;
+                    padding: 2rem;
+                    text-shadow: 0 0 5px lightgrey;
                 }
                 .right-tone {
-                    width: 50%;
+                    width: 25%;
                 }
+            }
+        }
+        .tone-inputs {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    // EMPHASIS STYLING BEGINS=======================
+    .emphasis {
+        padding: 10rem 0;
+        .emphasis-inputs {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            .emphasis.left {
+                width: 60%;
+            }
+            .emphasis-right {
+                width: 40%;
+            }
+        }
+        .submit-container {
+            display: flex;
+            justify-content: center;
+            .submit-button {
+                width: 400px;
             }
         }
     }
@@ -83,10 +120,13 @@ form {
     width: 100%;
     .fas, .fab {
         color: #fae16c;
-        text-shadow: 2px 2px 3px darkslategrey;
+        text-shadow: 1px 1px 8px darkslategrey;
     }
 }
 
+.emphasis-nodec {
+    width: 550px;
+}
 
 
 
