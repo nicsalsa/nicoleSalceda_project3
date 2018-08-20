@@ -16,7 +16,35 @@ header {
          letter-spacing: 5px;
          color: black;
          text-shadow: 0 0 10px white;
-         
+         @include breakPoint(break1) {
+            font-size: 4rem;
+         }
+         @include breakPoint(break2) {
+            font-size: 3rem;
+         }
+         @include breakPoint(break3) {
+            // top: 0;
+            bottom: -30%;
+         }
+         @include breakPoint(break5) {
+            font-size: 2rem;
+         }
+         @include breakPoint(break6){
+            bottom: -20%;
+         }
+         @include breakPoint(break8) {
+            flex-direction: column;
+            top: -5%;
+            left: -30%;
+            width: 100%;
+         }
+         @include breakPoint(break9){
+            top: -60%;
+            left: 0;
+            font-size: 3rem;
+            line-height: 0.8;
+
+         }
       }
    }
 
@@ -30,19 +58,42 @@ header {
          .half {
             height: 100vh;
             width: 50%;
-            text-align: center;
+            text-align: center; 
          }
          .half1 {
             background: #fae16c;
+            @include breakPoint(break5) {
+               display: none;
+            }
          }
          .half2 {
             background:#42636f;
+            @include breakPoint(break5) {
+              width: 100%;
+            }
          }
          .header-button {
             position: absolute;
             bottom: 30%;
             left: 50%;
             transform: translateX(-50%);
+            @include breakPoint(break5) {
+               width: 200px;
+            }
+            @include breakPoint(break6) {
+               bottom: 10%;
+               left: 20%;
+            }
+            @include breakPoint(break8){
+               font-size: 2rem;
+               width: 150px;
+            }
+            @include breakPoint(break9){
+               font-size: 3rem;
+               width: 200px;
+               bottom: 20%;
+               left: 50%;
+            }
          }
       }
    }
@@ -55,7 +106,13 @@ header {
    letter-spacing: 4px;
    color: black;
    padding: 2rem;
-   
+   @include breakPoint(break1){
+      font-size: 8rem;
+   }
+   @include breakPoint(break5) {
+      font-size: 5rem;
+      letter-spacing: 0.5px;
+   }
 }
 .bang1 {
    text-shadow: 0 0 15px white;
@@ -67,14 +124,31 @@ header {
 // instructions styling
 .instructions {
    padding: 10rem 0;
+   @include breakPoint(break9){
+      padding: 1rem 0;
+      margin: 0 auto;
+   }
    .container {
       background: rgba(245,255,250,0.5);
       padding: 5rem 10rem;
       line-height: 2;
       font-size: 2rem;
+      @include breakPoint(break2) {
+         width: 80%;
+         padding: 3rem;
+      }
+      @include breakPoint(break6) {
+         font-size: 1.5rem;
+      }
+      @include breakPoint(break9){
+         padding: 1rem;
+         line-height: 1.5;
+         font-size: 1.8rem;
+         width: 95%;
+      }
    }
 }
-
+// help link in bottom right corner
 .how-to-link {
    position: fixed;
    bottom: 5%;
@@ -82,5 +156,14 @@ header {
    font-size: 5rem;
    text-decoration: none;
    color: tomato;
+   @include breakPoint(break1) {
+      right: 2%;
+   }
+   @include breakPoint(break5) {
+      font-size: 3.5rem;
+   }
+   &:hover {
+      color: #fae16c;
+   }
 
 }

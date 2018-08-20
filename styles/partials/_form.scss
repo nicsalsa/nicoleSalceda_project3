@@ -20,6 +20,20 @@ form {
             flex-direction: column;
             align-items: center;
         }
+        @include breakPoint(break3) {
+            .relationship-question{
+                width: 90%;
+                padding: 0;
+            }
+            .relationship-inputs {
+                width: 100%;
+            }
+        }
+        @include breakPoint(break8) {
+            padding: 5rem 0;
+            flex-direction: column;
+            align-items:center;
+        }
     }
     // MODE QUESTION STYLES=========================
     .mode {
@@ -48,6 +62,18 @@ form {
                 padding-left: 15rem;
             }
         }
+        @include breakPoint(break3){
+            width: 90%;
+            justify-content: flex-start;
+            .mode-question {
+                width: 100%;
+                .align-right {
+                    padding: 0;
+                    
+                }
+            }
+        }
+        // @include breakPoint
     }
     // TONE QUESTION STYLINGS=======================
     .tone {
@@ -75,9 +101,27 @@ form {
                     width:40%;
                     padding: 2rem;
                     text-shadow: 0 0 5px lightgrey;
+                    @include breakPoint(break2){
+                        display: none;
+                    }
                 }
                 .right-tone {
                     width: 25%;
+                }
+                @include breakPoint(break1) {
+                    justify-content: space-between;
+                    .left-tone, .right-tone {
+                        width: 45%;
+                    }
+                }
+                @include breakPoint(break5){
+                    width: 90%;
+                }
+                @include breakPoint(break6){
+                    flex-direction: column;
+                    .left-tone, .right-tone {
+                        width: 80%;
+                    }
                 }
             }
         }
@@ -106,18 +150,31 @@ form {
                 }
             }
         }
+        @include breakPoint(break6){
+                width:90%;
+                .emphasis-inputs .emphasis-nodec {
+                    width: 250px;
+                }
+            }
         .submit-container {
             display: flex;
             justify-content: center;
             padding: 2rem 0;
             .submit-button {
                 width: 400px;
+                @include breakPoint(break7){
+                    font-size: 2rem;
+                    width: 250px;
+                    background-color: #fae16c;
+                    color: black;
+                }
             }
         }
     }
 }
 
-// input stylings
+
+// input stylings==============================
 .question-option {
     display: flex;
     justify-content: flex-start;
@@ -128,6 +185,14 @@ form {
     .fas, .fab {
         color: #fae16c;
         text-shadow: 1px 1px 8px darkslategrey;
+    }
+}
+.question-option, .fas, .fab {
+    @include breakPoint(break2){
+        font-size: 3rem;
+    }
+    @include breakPoint(break8) {
+        font-size: 2rem;
     }
 }
 
@@ -148,6 +213,16 @@ label {
     width: 300px;
     font-size: 3rem;
     border-radius: 2px;
+    @include breakPoint(break2) {
+        font-size: 2.5rem;
+        background: tomato;
+        border-radius: 35% 2rem 2rem 40%;
+        box-shadow: 2px 0 5px darkslategray;
+        width: 180px;
+    }
+    @include breakPoint(break8){
+        font-size: 2rem;
+    }
     &:hover {
         background: tomato;
         border-radius: 35% 2rem 2rem 40%;

@@ -1,6 +1,32 @@
 // FOOTER STYLES
 
 .final-results {
-   padding: 10rem 0;
+   padding-top: 10rem;
    background: lightgrey;
+   .answers{
+      font-size: 10rem;
+      .subtext {
+         font-size: 2rem;
+         font-weight: lighter;
+         line-height: 1.5;
+
+         
+      }
+      @include breakPoint(break3){
+         font-size: 5rem;
+         .image {
+            width: 90%;
+         }
+      }
+      .relationship-answer {
+         padding: 2rem;
+         font-weight: lighter;
+      }
+   }
+   .copyright-container {
+      background: black;
+      color: antiquewhite;
+      text-align: center;
+      
+   }
 }
