@@ -1,7 +1,7 @@
 // FOOTER STYLES
 
 .final-results {
-   padding-top: 10rem;
+   // padding-top: 10rem;
    background: lightgrey;
    .answers{
       font-size: 10rem;
@@ -19,7 +19,7 @@
          }
       }
       .relationship-answer {
-         padding: 2rem;
+         padding: 0;
          font-weight: lighter;
       }
    }
@@ -27,6 +27,7 @@
       background: black;
       color: antiquewhite;
       text-align: center;
+      margin: 0;
       
    }
 }

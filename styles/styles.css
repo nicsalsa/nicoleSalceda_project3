@@ -188,12 +188,12 @@ header {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        top: -5%;
+        bottom: -40%;
         left: -30%;
         width: 100%; } }
     @media (max-width: 425px) {
       header .header-title h1 {
-        top: -60%;
+        top: 0;
         left: 0;
         font-size: 3rem;
         line-height: 0.8; } }
@@ -581,7 +581,6 @@ input:checked + label {
   box-shadow: 2px 0 5px darkslategray; }
 
 .final-results {
-  padding-top: 10rem;
   background: lightgrey; }
   .final-results .answers {
     font-size: 10rem; }
@@ -595,12 +594,13 @@ input:checked + label {
         .final-results .answers .image {
           width: 90%; } }
     .final-results .answers .relationship-answer {
-      padding: 2rem;
+      padding: 0;
       font-weight: lighter; }
   .final-results .copyright-container {
     background: black;
     color: antiquewhite;
-    text-align: center; }
+    text-align: center;
+    margin: 0; }
 
 html {
   font-size: 62.5%; }

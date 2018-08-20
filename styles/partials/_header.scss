@@ -34,12 +34,12 @@ header {
          }
          @include breakPoint(break8) {
             flex-direction: column;
-            top: -5%;
+            bottom: -40%;
             left: -30%;
             width: 100%;
          }
          @include breakPoint(break9){
-            top: -60%;
+            top: 0;
             left: 0;
             font-size: 3rem;
             line-height: 0.8;
