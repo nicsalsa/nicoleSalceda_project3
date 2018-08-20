@@ -94,15 +94,22 @@ form {
             justify-content: space-between;
             flex-direction: row;
             .emphasis.left {
-                width: 60%;
+                width: 50%;
             }
             .emphasis-right {
-                width: 40%;
+                width: 50%;
+                position: relative;
+                .emphasis-icon {
+                    width: 300px;
+                    position: absolute;
+                    right: 50%;    
+                }
             }
         }
         .submit-container {
             display: flex;
             justify-content: center;
+            padding: 2rem 0;
             .submit-button {
                 width: 400px;
             }

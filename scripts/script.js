@@ -1,3 +1,4 @@
+// global variables
 const quizApp = {};
 let total = 0;
 // doc ready
@@ -107,59 +108,51 @@ quizApp.results = {
 quizApp.submitChoices = function(){
       $('form').on('submit', function(e) {
             e.preventDefault();
+            // results scroll
             $('html, body').animate({
                   scrollTop: $('#final-results').offset().top
             }, 1000);
-
+            // variables to get values from inputs
             const relationAnswer = $('input[name = relation]:checked').val();
             const modeAnswer = $('input[name = mode]:checked').val();
             const toneAnswer = $('input[name = tone]:checked').val();
             const emphasisAnswer = $('input[name = emphasis]:checked').val();
-            
+            // using push method to add values from variables into a new array
             const answerArray = [];
             answerArray.push(relationAnswer, modeAnswer, toneAnswer, emphasisAnswer);
             answerArray.forEach((item) => {
                   total += parseInt(item);
             })
-
-            // when input is selected 
+            // when input is selected, append the variable that holds the message in the array
             const selectedId1 = $('.relationship input[type = radio]:checked').attr('id');
             const results1 = quizApp.results.answer1[selectedId1][0].message;
-            console.log(results1);
             $('.relationship-answer').append(results1);
 
             const selectedId2 = $('.mode input[type = radio]:checked').attr('id');
             const results2 = quizApp.results.answer2[selectedId2][0].message;
             $('.mode-answer').append(results2);
-            console.log(results2);
 
             const selectedId3 = $('.tone input[type = radio]:checked').attr('id');
             const results3 = quizApp.results.answer3[selectedId3][0].message;
             $('.tone-answer').append(results3);
-            console.log(results3);
 
             const selectedId4 = $('.emphasis input[type = radio]:checked').attr('id');
             const results4 = quizApp.results.answer4[selectedId4][0].message;
             $('.emphasis-answer').append(results4);
-            console.log(results4);
-
+            // if else function to populate results
             if(total < 50){
                   let dontUseDisplay = $('h2.answers').text(
                         'No bang necessary!'
                   );
-                  // $('.answers').append(dontUseDisplay);
             } else if(total >= 50 && total <= 60){
                   let cautionDisplay = $('h2.answers').text(
                         'Use with caution'
                   );
-                  // $('.answers').append(cautionDisplay);
             } else {
                   let useDisplay = $('h2.answers').text(
                         'Bang at will!!!'
                   );
-                  // $('.answers').append(useDisplay);
             }; 
-            // const btn = $('.submit-button');
       });
 }
 
