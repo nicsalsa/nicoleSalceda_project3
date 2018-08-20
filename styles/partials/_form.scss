@@ -1,0 +1,114 @@
+// FORM STYLES
+
+form {
+    background-color: antiquewhite;
+    // RELATIONSHIP QUESTION STYLES
+    .relationship {
+        display: flex;
+        justify-content: center;
+        padding: 10rem 0;
+        .relationship-question {
+            width: 50%;
+            .question-title {
+                margin: 0;
+                line-height: 1;
+            }
+        }
+        .relationship-inputs {
+            width:50%;
+            display: flex;
+            align-items: center;
+        }
+    }
+    // MODE QUESTION STYLES
+    .mode {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10rem 0;
+        .mode-inputs {
+            width: 40%;
+        }
+        .mode-question {
+            width: 60%;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            .mode-main-question, .mode-title {
+                display:block;
+            }
+            .align-right {
+                width: 100%;
+                padding-left: 15rem;
+            }
+        }
+    }
+    // TONE QUESTION STYLINGS
+    .tone {
+        padding: 10rem 0;
+        .tone-question {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h2.tone-title, p.tone-main-question {
+                display: block;
+                text-align: center;
+            }
+            .tone-flexcontainer {
+                width: 100%;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+                .left-tone {
+                    width: 50%;
+                }
+                .right-tone {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+// input stylings
+.question-option {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 1rem 0;
+    width: 100%;
+    .fas, .fab {
+        color: #fae16c;
+        text-shadow: 2px 2px 3px darkslategrey;
+    }
+}
+
+
+
+
+
+// hiding the radio button
+input[type = radio] {
+    visibility:hidden;
+}
+label {
+    cursor: pointer;
+    padding: 5px;
+    width: 300px;
+    font-size: 3rem;
+    border-radius: 2px;
+    &:hover {
+        background: tomato;
+        border-radius: 35% 2rem 2rem 40%;
+        box-shadow: 2px 0 5px darkslategray;
+    }
+}
+input:checked + label {
+    background: #fae16c;
+    border-radius: 35% 2rem 2rem 40%;
+    box-shadow: 2px 0 5px darkslategray;
+}

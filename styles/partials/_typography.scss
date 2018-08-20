@@ -2,3 +2,18 @@
 
 /* font-family: 'Bangers', cursive;
 font-family: 'Rubik', sans-serif; */
+// VARIABLES
+$font-title: 'Bangers', cursive;
+$font-body: 'Rubik', sans-serif;
+
+.question-title {
+   font-size: 2rem;
+   color: tomato;
+   text-transform: uppercase;
+}
+.question {
+   font-size: 5rem;
+}
+.question-option {
+   font-size: 3rem;
+}

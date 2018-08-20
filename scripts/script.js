@@ -1,11 +1,5 @@
 
 // make objects for relationship, mode, tone, and emphasis
-
-// for each object, make properties that produce a value. write a title for each value produced.
-// 0 = dontUse
-// 10 = useWithCaution
-// 20 = use
-
 const quizApp = {};
 let total = 0;
 
@@ -110,13 +104,6 @@ quizApp.results = {
                tally: 0,
             }],
    }
-//    resultsDisplay: {
-//          use: [{
-
-//          }],
-//          useWithCaution: [{}],
-//          dontUse: [{}],
-//    }
 }
 
 quizApp.submitChoices = function(){
@@ -131,43 +118,45 @@ quizApp.submitChoices = function(){
             answerArray.push(relationAnswer, modeAnswer, toneAnswer, emphasisAnswer);
             answerArray.forEach((item) => {
                   total += parseInt(item);
-                  // console.log(item);
-                  console.log(total);
             })
 
             // when input is selected 
             const selectedId1 = $('.relationship input:checked').attr('id');
             const results1 = quizApp.results.answer1[selectedId1][0].message;
             console.log(results1);
+            $('.relationship-answer').append(results1);
 
             const selectedId2 = $('.mode input:checked').attr('id');
             const results2 = quizApp.results.answer2[selectedId2][0].message;
+            $('.mode-answer').append(results2);
             console.log(results2);
 
             const selectedId3 = $('.tone input:checked').attr('id');
             const results3 = quizApp.results.answer3[selectedId3][0].message;
+            $('.tone-answer').append(results3);
             console.log(results3);
 
             const selectedId4 = $('.emphasis input:checked').attr('id');
             const results4 = quizApp.results.answer4[selectedId4][0].message;
+            $('.emphasis-answer').append(results4);
             console.log(results4);
 
             if(total < 50){
-                  let dontUseDisplay = $('<li class="display1">').append(
-                        '<h2>No bang necessary!</h2>'
+                  let dontUseDisplay = $('h2').text(
+                        'No bang necessary!'
                   );
                   $('.answers').append(dontUseDisplay);
             } else if(total >= 50 && total <= 60){
-                  let cautionDisplay = $('<li class="display2">').append(
-                        '<h2>Use with caution</h2>'
+                  let cautionDisplay = $('h2').text(
+                        'Use with caution'
                   );
                   $('.answers').append(cautionDisplay);
             } else {
-                  let useDisplay = $('<li class="display3">').append(
-                        '<h2>Bang at will!!!</h2>'
+                  let useDisplay = $('h2.answers').text(
+                        'Bang at will!!!'
                   );
-                  $('.answers').append(useDisplay);
-            };            
+                  // $('.answers').append(useDisplay);
+            }; 
       });
 }
 
